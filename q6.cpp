@@ -22,7 +22,7 @@ int main(){
     sum=num1+num2;
 
     cout <<"The sum is:" <<sum <<endl;
-    cout << "The nuber of digits in the sum value:" <<countDigits (sum) <<endl;
+    cout << "The number of digits in the sum value:" <<countDigits (sum) <<endl;
 
     return 0;
 }
