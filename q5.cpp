@@ -26,7 +26,7 @@ int main(){
         swap(num2,num3);
     }
 
-    cout <<"The three hightest numbers in descending order is:" << num1 << "," <<num2 <<"," <<num3 <<endl;
+    cout <<"The three hightest numbers in descending order is :" << num1 << "," <<num2 <<"," <<num3 <<endl;
     
     return 0;
 }
