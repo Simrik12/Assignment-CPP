@@ -44,8 +44,12 @@ int main (){
     Triangle T;
     double S1, S2, S3;
 
-    cout << "Enter the three sides of the triangle: ";
-    cin >> S1 >> S2 >> S3;
+    cout << "Enter the first side of the triangle: ";
+    cin >> S1;
+    cout << "Enter the second side of the triangle: ";
+    cin >> S2 ;
+    cout << "Enter the third side of the triangle: ";
+    cin >> S3;
 
     //Setting the sides of the triangle to determine the type of triangle
     T.setSides (S1, S2, S3);
