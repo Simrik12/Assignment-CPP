@@ -14,7 +14,7 @@ public:
 void setDetails (string studentName, int StudentClass, int Rollnumber, float studentMarks){
     name = studentName;
     this -> StudentClass = StudentClass;
-    RollNumber = RollNumber;
+    this -> RollNumber = RollNumber;
     marks= studentMarks;
 }
 // Function to calculate the grade based on marks
@@ -30,6 +30,7 @@ void displayDetails (){
    cout << "\n --- Student Information ---"  <<endl;
    cout << "Name: " << name << endl;
    cout << "Class: " << StudentClass << endl;
+   cout << "Roll Number: " <<RollNumber << endl;
    cout << "Marks: " << marks << endl;
    cout << "Grade: " << calculatetheGrade() << endl;
 }
@@ -41,7 +42,7 @@ int main (){
    int StudentClass, RollNumber;
    float marks;
 
-   //Inputing student details
+   //Inputting Student details
    cout << "Enter student name: " ;
    getline (cin, name);
    cout << "Enter student class: ";
