@@ -1,25 +1,59 @@
 #include <iostream>
-#include <cmath>
+#include <string>
 using namespace std;
 
-int main() {
-    int num, Firstdigit, Lastdigit, Numdigits, swappednum;
-    
-    cout << "Enter a number: ";
-    cin >> num;
+class Student{
+    private:
+    string name;
+    int StudentClass;
+    int RollNumber;
+    float marks;
 
-    // Finding the last digit
-    Lastdigit = num % 10;
+public:
+// Function to set the student details
+void setDetails (string studentName, int StudentClass, int Rollnumber, float studentMarks){
+    name = studentName;
+    this -> StudentClass = StudentClass;
+    RollNumber = RollNumber;
+    marks= studentMarks;
+}
+// Function to calculate the grade based on marks
+string calculatetheGrade (){
+    if (marks >=90) return "Excellent";
+    else if (marks >=75) return "Very Good";
+    else if (marks >=50) return "Satisfactory";
+    else return "Needs Improvement";
+}
 
-    // Finding the number of digits
-    Numdigits = log10(num);
+//Function to display student details
+void displayDetails (){
+   cout << "\n --- Student Information ---"  <<endl;
+   cout << "Name: " << name << endl;
+   cout << "Class: " << StudentClass << endl;
+   cout << "Marks: " << marks << endl;
+   cout << "Grade: " << calculatetheGrade() << endl;
+}
+};
 
-    // Finding the first digit
-    Firstdigit = num / pow(10, Numdigits);
+int main (){
+   Student student;
+   string name;
+   int StudentClass, RollNumber;
+   float marks;
 
-    swappednum = Lastdigit * pow(10, Numdigits) + (num % (int)pow(10, Numdigits)) / 10 * 10 + Firstdigit;
+   //Inputing student details
+   cout << "Enter student name: " ;
+   getline (cin, name);
+   cout << "Enter student class: ";
+   cin >> StudentClass;
+   cout << "Enter the roll number: ";
+   cin >> RollNumber;
+   cout << "Enter the marks: ";
+   cin >> marks;
 
-    cout << "The numbers after swapping first and last digits: " << swappednum << endl;
+   //Setting and display the student details
+   student.setDetails (name, StudentClass, RollNumber, marks);
+   student. displayDetails ();
 
-    return 0;
+   return 0;
 }
