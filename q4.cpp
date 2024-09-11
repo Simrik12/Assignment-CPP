@@ -1,31 +1,55 @@
 #include <iostream>
 using namespace std;
 
-int sumofDigits (int start, int end){
-    int totalsum=0;
+class Triangle {
+    private:
+     double side1, side2, side3;
 
-    for (int i= start; i<=end; i++){
-        int num=i;
-
-    //Adding the digits of the current number
-    while (num>0){
-        totalsum+= num % 10;
-        num/=10;
-    }
-    }
-    return totalsum;
+    public:
+    // Function to set the three sides of the tringle
+    void setSides (double S1, double S2, double S3) {
+        side1= S1;
+        side2= S2;
+        side3= S3;
 }
+
+// Checking if the triangle is equilateral
+bool isEquilateral (){
+    return (side1 == side2 && side2 == side3);
+}
+
+// Checking if the triangle is isosceles
+bool isIsosceles () {
+    return (side1 == side2 || side2 == side3 || side1 == side3);
+}
+
+//Checking if the triangle is scalene
+bool isScalene (){
+    return (side1 != side2 && side2 != side3 && side1 != side3);
+}
+
+//Function to display the type of trianle 
+void displayType (){
+    if (isEquilateral ()){
+        cout << "The triangle is an equilaterial triangle." <<endl;
+    } else if (isIsosceles()){
+        cout << "The triangle is an isosceles triangle." << endl;
+} else {
+    cout << "The triangle is a scalene triangle." << endl;
+       }
+    }
+};
+
 int main (){
-    int start,end;
+    Triangle T;
+    double S1, S2, S3;
 
-    cout <<"Enter the starting number:";
-    cin>>start;
+    cout << "Enter the three sides of the triangle: ";
+    cin >> S1 >> S2 >> S3;
 
-    cout <<"Enter the ending number:";
-    cin>>end;
+    //Setting the sides of the triangle to determine the type of triangle
+    T.setSides (S1, S2, S3);
+    T.displayType ();
 
-    //Calculating the sum of digits and then printing it
-    cout << "The sum of all the digits between " <<start <<"and" <<end <<"is:" << sumofDigits (start,end) <<endl;
-
-    return 0;
+return 0;
 }
