@@ -16,7 +16,7 @@ int main (){
     cout << "Enter the upper bound: ";
     cin >> upperBound;
 
-    cout << "Non-prime number from 1 to " << upperBound << " are:" << endl;
+    cout << "Non-prime numbers from 1 to " << upperBound << " are:" << endl;
 
     //Iterating through numbers from 1 to upperbound number
     for (int i=1; i<= upperBound; ++i){
