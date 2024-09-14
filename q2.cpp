@@ -1,28 +1,23 @@
 #include <iostream>
 using namespace std;
 
-//Function to check if a number is prime or not
-bool isPrime (int num){
-    if (num <=1) return false;
-    for (int i=2; i <=num / 2; ++i){
-        if (num% i ==0) return false;
+//Function to calculate the factorial using recursion
+int factorial (int n){
+    if (n== 0 || n==1){
+        return 1;  //Base case: Factoiral of 0 or 1 is 1
     }
-    return true;
+    return n* factorial (n-1);  //Recursive call
 }
+
 int main (){
-    int number;
-
+    int num;
     cout << "Enter a number: ";
-    cin  >> number;
+    cin >> num;
 
-    //Searching for the last prime number before the entered number
-    number --;  //Decrease the number by 1 to find the last prime number before it
-    while (number >1){
-        if (isPrime (number)){
-            cout << "The last prime number before the entered number is: " << number << endl;
-            break;
-        }
-        number --; // Decrementing to find the next prime
-}
-return 0;
+    //Calculate the factorial 
+    int result = factorial (num);
+
+    cout << " The factorial of" << num << " is: " << result << endl;
+
+    return 0;
 }
