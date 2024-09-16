@@ -13,8 +13,8 @@ int main (){
         for (int j = 1; j <= rows -i; ++j) {
             cout << " ";
         }
-        // Printing the repeating number
-        for (int j = 1; j <= (2 * i -1 ); ++j) {
+        // Printing the repeating number i for each row
+        for (int j = 1; j <= i; ++j) {
             cout << i << " ";
     }
     cout << endl;
