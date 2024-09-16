@@ -1,37 +1,23 @@
 #include <iostream>
 using namespace std;
 
-//Function to check if the number is prime or not
-bool isPrime (int n, int i=2){
-    if (n <=2)
-    return (n==2);   // 2 is prime but 1 and 0 are not
-    if (n %i ==0)
-    return false;    // If it is divisible by i, then it is not prime
-    if (i*i > n)
-    return true;  // If no divisors found, the n is prime
-    return isPrime (n, i+1);   //Checking for next divisor
-}
-
-//Recursive function to find the sum of primes in a range
-int SumofPrimes (int start, int end){
-    if (start > end)
-    return 0;   //Base case: if start exceeds end, then return 0
-    if (isPrime (start))
-    return start + SumofPrimes (start +1, end);  //If prime then add to sum
-return SumofPrimes (start +1, end);   //If not prime then move to next number
-}
-
 int main (){
-    int start, end;
+    int rows;
 
-    cout << "Enter the starting of the range: ";
-    cin >> start;
-    cout << "Enter the ending of the range: ";
-    cin >> end;
+    cout << "Enter the number of rows: ";
+    cin >> rows;
 
-    //Calculating and displaying the sum of prime numbers
-    int sum = SumofPrimes (start, end);
-    cout << "The sum of prime numbers in the range is: " << sum << endl;
+    //Looping through each row
+    for (int i = 0; i < rows; ++i) {
+        int number =1;
 
+    //Looping through each column in the current row
+    for (int j = 0; j <=i; ++j){
+        cout << number <<  " ";
+        number = number * (i - j) / (j + 1);   //Computing the next number in the row
+}
+
+cout << endl;
+}
     return 0;
 }
