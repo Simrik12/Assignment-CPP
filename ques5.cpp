@@ -1,27 +1,26 @@
 #include <iostream>
 using namespace std;
 
-//Function to check if the string is a palindrome using recursion
-bool isPalindrome (string &str, int start, int end){
-    if (start >= end){
-        return true;  //Base case: if start meets or exceeds end, then it is a palindrome
-    }
-    if (str[start] != str[end]) {
-        return false;  // If characters at the end and start don't match then it is not a palindrome
-}
-return isPalindrome (str, start +1, end -1);  //Recursive call
-}
-
 int main (){
-    string str;
-    cout << "Enter a string: ";
-    getline (cin, str);
+    int rows;
 
-    //Checking if the string is a palindrome
-    if (isPalindrome (str, 0, str.length()-1)){
-        cout << str << " is a palindrome."  << endl;
-    } else {
-        cout << str << " is not a palindrome."  <<endl;
+    cout << "Enter the number of rows: ";
+    cin >> rows;
+
+    //Outer loop for each row
+    for (int i = 1; i <= rows; ++i) {
+        // Printing spaces for alignment
+        for (int j = 1; j <= rows -i; ++j) {
+            cout << " ";
+        }
+        // Printing the repeating number
+        for (int j = 1; j <= (2 * i -1 ); ++j) {
+            cout << i << " ";
+    }
+    cout << endl;
+    }
+
+    return 0;
 }
-return 0;
-}
+
+
