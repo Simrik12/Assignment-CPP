@@ -23,7 +23,7 @@ for (int i = 0; i < n; i++) {
 //Sorting the array in ascending order
 sort (arr, arr + n);
 
-cout << "The second largest element is: " << arr [n-2] << endl;
+cout << "The second largest element in the array is: " << arr [n-2] << endl;
 
 return 0;
 }
