@@ -1,33 +1,20 @@
  #include <iostream>
- #include <algorithm>  //For sorting
+ #include <string>
 using namespace std;
 
-int main(){
-    int n;
+int main () {
+    string input;
 
-    cout << "Enter the number of elements in the array: ";
-    cin >> n;
+    cout << "Enter a string: ";
+    getline (cin, input);
 
-    //Checking if the input size is large enough
-    if (n < 3) {
-        cout << "The array must have at least 3 elements." << endl;
-        return 1;
+    //Creating a new string to hold the reversed string
+    string reversed;
+
+    //Iterating backwards through the input string and creating the reversed tring
+    for (int i = input.length () -1; i >=0; --i) {
+        reversed += input [i];
+    }
+
+    cout << "The reversed string is: "  << reversed << endl;
 }
-
-int arr[n];
-
-//Inputting the elements of array
-cout << "Enter " << n << " elements:" <<endl;
-for (int i = 0; i < n; i++) {
-    cin >> arr [i];
-}
-
-//Sorting the array in ascending order
-sort(arr, arr + n);
-
-cout << "The largest three elements are: "
-    << arr [n-1] << ", " << arr[n-2] << ", and " << arr [n-3]  << endl;
-
-return 0;
-}
-
