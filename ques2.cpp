@@ -19,7 +19,7 @@ for (int i =1; i <input.length(); i++) {
     }
 }
 
-cout << "The string with capitalized words: " << input << endl;
+cout << "The string with capitalized words is: " << input << endl;
 
 return 0;
 }
