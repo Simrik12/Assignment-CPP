@@ -1,24 +1,31 @@
 #include <iostream>
+#include <algorithm>  //For sorting
+#include <string>
 using namespace std;
 
 int main () {
-    int rows;
+    int n;
 
-    cout << "Enter the number of rows: ";
-    cin >> rows;
+    cout << "Enter the number of strings: ";
+    cin >> n;
 
-    //Looping through each row
-    for (int i = 0; i < rows; ++i) {
-        //Printing spaces for right justification
-        for (int j = 0; j < i; ++j) {
-            cout << " ";
-        }
-
-//Printing number for the current row 
-for (int j = 1; j <= rows -i; ++j) {
-    cout << j;
+    //Checking if the input size is large enough
+    if (n <3) {
+        cout << "There must be at least 3 strings."  << endl;
+        return 1;
 }
-  cout << endl;
-    }
+
+string arr[n];
+cout << "Enter "  << n << " strings:" <<endl;
+for (int i = 0; i < n; i++) {
+    cin >> arr[i];
+}
+
+//Sorting the array of string 
+sort (arr, arr + n);
+
+//Displaying the third largest string 
+  cout << "The third largest string is: " << arr[n-3] << endl;
+    
     return 0;
 }
