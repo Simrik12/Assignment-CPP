@@ -11,7 +11,7 @@ int main() {
 
     // Checking if the input size is large enough
     if(n < 2) {
-        cout << "Array must have at least 2 elements." << endl;
+        cout << "The array must have at least 2 elements." << endl;
         return 1;
     }
     
@@ -32,7 +32,7 @@ int main() {
         seen.insert(arr[i]);  // Adding the current element to the set
     }
     
-    cout << "The first repeating element is none" << endl;  // Message if no repeating elements are found
+    cout << "No repeating elements found." << endl;  // Message if no repeating elements are found
     
     return 0;
 }
