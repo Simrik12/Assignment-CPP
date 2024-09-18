@@ -1,29 +1,25 @@
 #include <iostream>
-#include <algorithm>       //For sorting
+#include <string>  
 using namespace std;
 
 int main () {
-    int n;
+    string input;
 
-cout << "Enter the number of elements in the array: ";
-cin >> n;
+    cout << "Enter a string: ";
+    getline (cin, input);
 
-//Checking if the input size is large enough
-if (n < 2) {
-    cout << "The array must have at least 2 elements."  << endl;
-    return 1;
+    //Capitalizing the first letter of the string if it is not a space
+    if (input [0] != ' ') {
+        input [0] =toupper(input[0]);
+    }
+//Traversing through the string an capitalizing the first letter after each space
+for (int i =1; i <input.length(); i++) {
+    if (input[i - 1] == ' ' && input[i] != ' ') {
+        input[i] = toupper(input[i]);
+    }
 }
 
-int arr[n];
-cout << "Enter "  << n << " elements:"  << endl;
-for (int i = 0; i < n; i++) {
-    cin >> arr[i];
-}
-
-//Sorting the array in ascending order
-sort (arr, arr + n);
-
-cout << "The second largest element in the array is: " << arr [n-2] << endl;
+cout << "The string with capitalized words: " << input << endl;
 
 return 0;
 }
