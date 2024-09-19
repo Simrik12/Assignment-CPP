@@ -1,26 +1,36 @@
 #include <iostream>
-#include <string>
-#include <algorithm>   // For reversing
+#include <vector>
+#include <algorithm> // For find
 
 using namespace std;
 
-int main() {
-    string input;
-    
-    cout << "Enter a string: ";
-    getline(cin, input);
-
-    //Creating a reversed copy of the input string
-    string reversed = input;
-    reverse(reversed.begin(), reversed.end());      //Reversing the string
-    
-    //Checking if the original string and the reversed string are the same
-    if (input == reversed) {
-        cout << "The string is a palindrome." << endl;
-    } else {
-        cout << "The string is not a palindrome." << endl;
+// Function to check if all letters in str2 are in str1
+bool areLettersInString1(const string &str1, const string &str2) {
+    for (char c : str2) {
+        if (find(str1.begin(), str1.end(), c) == str1.end()) {
+            return false; // If the letter is not found in str1
+        }
     }
+    return true; // If the letters is found in str1
+}
 
+int main() {
+    string str1, str2;
+    cout << "Enter the first string: ";
+    cin >> str1;
+    cout << "Enter the second string: ";
+    cin >> str2;
+    
+    // Checking if all letters in str2 are in str1
+    bool result = areLettersInString1(str1, str2);
+    
+    if (result) {
+        cout << "All letters in the second string are in the first string." << endl;
+    } else {
+        cout << "Not all letters in the second string are in the first string." << endl;
+    }
+    
     return 0;
 }
+
 
