@@ -1,25 +1,37 @@
 #include <iostream>
-#include <string>  
+#include <vector>
+#include <cctype> // For toupper
 using namespace std;
 
-int main () {
-    string input;
-
-    cout << "Enter a string: ";
-    getline (cin, input);
-
-    //Capitalizing the first letter of the string if it is not a space
-    if (input [0] != ' ') {
-        input [0] =toupper(input[0]);
+// Function to capitalize the first character of each string in the vector
+vector<string> capitalizeFirst(vector<string> &vec) {
+    for (string &str : vec) {
+        if (!str.empty()) {
+            str[0] = toupper(str[0]);
+        }
     }
-//Traversing through the string an capitalizing the first letter after each space
-for (int i =1; i <input.length(); i++) {
-    if (input[i - 1] == ' ' && input[i] != ' ') {
-        input[i] = toupper(input[i]);
-    }
+    return vec;
 }
 
-cout << "The string with capitalized letters is: " << input << endl;
-
-return 0;
+int main() {
+    int n;
+    cout << "Enter the number of strings: ";
+    cin >> n;
+    
+    vector<string> vec(n);
+    cout << "Enter the strings:" << endl;
+    for (int i = 0; i < n; ++i) {
+        cin >> vec[i];
+    }
+    
+    // Capitalizing the first character of each string
+    vector<string> capitalizedVec = capitalizeFirst(vec);
+    
+    cout << "The capitalized strings are:" << endl;
+    for (const string &str : capitalizedVec) {
+        cout << str << endl;
+    }
+    
+    return 0;
 }
+
